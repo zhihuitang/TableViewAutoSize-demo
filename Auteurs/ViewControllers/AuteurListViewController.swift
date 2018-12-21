@@ -57,8 +57,8 @@ extension AuteurListViewController: UITableViewDataSource {
  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AuteurTableViewCell
-    let auteur = auteurs[indexPath.row]
-    cell.configure(auteur: auteur)
+//    let auteur = auteurs[indexPath.row]
+//    cell.configure(auteur: auteur)
 
     return cell
   }
@@ -68,9 +68,9 @@ extension AuteurListViewController: UITableViewDataSource {
 
 extension AuteurListViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//    guard let cell = cell as? AuteurTableViewCell else { return }
-//    let auteur = auteurs[indexPath.row]
-//    cell.configure(auteur: auteur)
+    guard let cell = cell as? AuteurTableViewCell else { return }
+    let auteur = auteurs[indexPath.row]
+    cell.configure(auteur: auteur)
 
   }
 
